@@ -14,7 +14,10 @@ function App() {
 
   const addRandomContact = index => {
     console.log(setContactList)
-    setContactList(contactList.push(contacts[index]))
+    const arr = [...contactList]
+    arr.push(contacts[index])
+
+    setContactList(arr)
 
   }
 
@@ -31,7 +34,7 @@ function App() {
       </thead>
       <tbody>
         {
-          firstFiveContacts.map((elm, i) => {
+          contactList.map((elm, i) => {
             return (
               <tr key={i}>
                 <td>
